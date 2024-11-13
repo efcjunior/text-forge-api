@@ -1,30 +1,30 @@
 # TEXT-FORGE API
 
-## 1. Objetivo
+## 1. Objective
 
-A TEXT-FORGE é uma API projetada para realizar duas tarefas principais: verificar se uma string é um palíndromo e contar a ocorrência de cada caractere na string fornecida.
+TEXT-FORGE is an API designed to perform two main tasks: check if a string is a palindrome and count the occurrence of each character in the provided string.
 
-## 2. Regras
+## 2. Rules
 
-* A API não remove caracteres não alfanuméricos ao verificar se a string é um PALÍNDROME. Isso significa que a comparação de caracteres é realizada exatamente como fornecida na string de entrada. Por exemplo, se a palavra "ovo" for considerada um palíndromo, ela só será reconhecida como tal se a string fornecida consistir apenas dos caracteres "o", "v" e "o". Se houver caracteres não alfanuméricos na string, como "@" ou "#", eles não serão removidos ou ignorados durante a verificação do palíndromo. Isso garante que a API mantenha a integridade dos dados fornecidos e forneça resultados precisos, mesmo em casos onde a presença de caracteres não alfanuméricos é relevante para a análise do texto.
+* The API does not remove non-alphanumeric characters when checking if a string is a PALINDROME. This means that character comparison is performed exactly as provided in the input string. For example, if the word "ovo" is considered a palindrome, it will only be recognized as such if the provided string consists only of the characters "o," "v," and "o." If there are non-alphanumeric characters in the string, such as "@" or "#," they will not be removed or ignored during the palindrome check. This ensures that the API preserves the integrity of the provided data and delivers accurate results, even in cases where the presence of non-alphanumeric characters is relevant to the text analysis.
 
-* Não há remoção de caracteres não alfanuméricos: Todos os caracteres presentes na string fornecida são contabilizados, incluindo caracteres não alfanuméricos. Isso significa que símbolos, pontuações e outros caracteres especiais serão considerados na contagem.
+* No removal of non-alphanumeric characters: All characters present in the provided string are counted, including non-alphanumeric characters. This means symbols, punctuation, and other special characters are considered in the count.
 
-* A contagem diferencia letras maiúsculas de minúsculas: A API faz distinção entre letras maiúsculas e minúsculas ao contar caracteres. Portanto, por exemplo, 'A' e 'a' são contados separadamente na contagem de caracteres.
+* Case sensitivity: The API differentiates between uppercase and lowercase letters when counting characters. Therefore, for example, 'A' and 'a' are counted separately in the character count.
 
-* A contagem diferencia letras acentuadas e não acentuadas: Caracteres acentuados são considerados separadamente de suas contrapartes não acentuadas na contagem de caracteres. Por exemplo, 'á' e 'a' são contados como caracteres distintos.
+* Accent sensitivity: Accented characters are considered separately from their unaccented counterparts in the character count. For example, 'á' and 'a' are counted as distinct characters.
 
-## 3. Algorítimos
+## 3. Algorithms
 
-**Two-pointer Approach:** Esta abordagem é eficiente e adequado para verificar se uma string é um palíndromo, pois realiza a verificação de forma direta e sem necessidade de alocação de memória adicional
+**Two-pointer Approach:** This approach is efficient and suitable for checking if a string is a palindrome, as it performs the check straightforwardly and without requiring additional memory allocation.
 
-**Character Counting Algorithm:** Essa implementação é eficiente e direta, pois utiliza um mapa para armazenar as contagens de caracteres e itera sobre a string de entrada apenas uma vez
+**Character Counting Algorithm:** This implementation is efficient and straightforward, as it uses a map to store character counts and iterates over the input string only once.
 
-## 4. Arquitetura / Ferramentas
+## 4. Architecture / Tools
 
-* Linguagem/plataforma Java 
+* Language/platform: Java
 
-* Framework Spring Boot
+* Framework: Spring Boot
 
 * Maven
 
@@ -34,52 +34,52 @@ A TEXT-FORGE é uma API projetada para realizar duas tarefas principais: verific
 
 * Swagger UI
 
-## Testes
+## Tests
 
-### Unitários
+### Unit Tests
 
-Os testes unitários para as principais classes da TEXT-FORGE API foram criados seguindo o padrão TDD (Test-Driven Development), utilizando o framework JUnit
+Unit tests for the main classes of the TEXT-FORGE API were created following the TDD (Test-Driven Development) pattern, using the JUnit framework.
 
-Para executar os testes unitários, você pode utilizar o comando abaixo a partir do diretório raiz do projeto
+To run the unit tests, you can use the command below from the project's root directory:
 
 `./mvnw test`
 
-### Carga
+### Load Testing
 
-Um plano de teste foi criado para avaliar o desempenho da TEXT-FORGE API, simulando 50.000 requisições simultâneas.
+A test plan was created to evaluate the performance of the TEXT-FORGE API by simulating 50,000 simultaneous requests.
 
 `src/main/test/jmeter/HTTP Request.jmx`
 
-## Utilização da TEXT-FORGE API
+## Usage of TEXT-FORGE API
 
-**Enpoint da API**
+**API Endpoint**
 
 `http://textforge.us-east-1.elasticbeanstalk.com/api/manipulacao-string`
 
-Ou clique [AQUI](http://textforge.us-east-1.elasticbeanstalk.com/api/manipulacao-string) 
+Or click [HERE](http://textforge.us-east-1.elasticbeanstalk.com/api/manipulacao-string)
 
-**Exemplo JSON de requisição**
+**Example JSON Request**
 
 ```json
 {
-  "texto":"ovo"
+  "texto": "ovo"
 }
 ```
 
-**Exemplo JSON de resposta**
+**Example JSON Response**
 
 ```json
 {
-  "palindromo": true,
-  "ocorrencias_caracteres": {
+  "palindrome": true,
+  "character_occurrences": {
     "o": 2,
     "v": 1
   }
 }
 ```
 
-## Documentação e Interação com TEXT-FORGE API pelo Swagger-UI
+## Documentation and Interaction with TEXT-FORGE API via Swagger-UI
 
-Com o Swagger UI, você pode explorar o endpoint disponível na API
+With Swagger UI, you can explore the available endpoint in the API.
 
-Para acessar o Swagger UI, siga este link:[TEXT-FORGE API SWAGGER-UI](http://textforge.us-east-1.elasticbeanstalk.com/swagger-ui/index.html)
+To access Swagger UI, follow this link: [TEXT-FORGE API SWAGGER-UI](http://textforge.us-east-1.elasticbeanstalk.com/swagger-ui/index.html)
